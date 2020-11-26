@@ -1,22 +1,36 @@
 /*
-最长回文子串
-给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
+ * @lc app=leetcode.cn id=5 lang=cpp
+ *
+ * [5] 最长回文子串
+ *
+ * https://leetcode-cn.com/problems/longest-palindromic-substring/description/
+ *
+ * algorithms
+ * Medium (32.40%)
+ * Likes:    2938
+ * Dislikes: 0
+ * Total Accepted:    425.4K
+ * Total Submissions: 1.3M
+ * Testcase Example:  '"babad"'
+ *
+ * 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
+ * 
+ * 示例 1：
+ * 
+ * 输入: "babad"
+ * 输出: "bab"
+ * 注意: "aba" 也是一个有效答案。
+ * 
+ * 
+ * 示例 2：
+ * 
+ * 输入: "cbbd"
+ * 输出: "bb"
+ * 
+ * 
+ */
 
-示例 1：
-
-输入: "babad"
-输出: "bab"
-注意: "aba" 也是一个有效答案。
-示例 2：
-
-输入: "cbbd"
-输出: "bb"
-
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/longest-palindromic-substring
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-*/
-
+// @lc code=start
 #include <iostream>
 
 using namespace std;
@@ -26,7 +40,7 @@ using namespace std;
 // 3. 动态规划，有点难理解
 class Solution {
 public:
-    string longestPalindromev1(string s) {
+    string longestPalindromev2(string s) {
         string result = "";
         for ( int i = 0; i < s.length(); i++){
             int tmpsize = s.length() - i;
@@ -55,7 +69,7 @@ public:
         return true;
     }
 
-    string longestPalindromev2(string s) {
+    string longestPalindrome(string s) {
         int len = s.length();
         if (len <= 1) {
             return s;
@@ -91,12 +105,5 @@ public:
         return sub.substr(i + 1, j - i - 1);
     }
 };
+// @lc code=end
 
-int main()
-{
-    Solution s;
-    cout << s.longestPalindromev2("babad") << endl;
-    cout << s.longestPalindromev2("cbbd") << endl;
-    cout << s.longestPalindromev2("bb") << endl;
-    return 0;
-}
