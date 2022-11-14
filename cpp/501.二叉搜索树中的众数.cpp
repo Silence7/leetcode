@@ -68,7 +68,7 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-// #include "include/TreeNode.h" // 提交注释, 本地调试使用
+#include "include/TreeNode.h" // 提交注释, 本地调试使用
 
 #include <vector>
 #include <stack>
